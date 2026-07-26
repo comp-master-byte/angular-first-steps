@@ -3,12 +3,12 @@
     type="text"
     placeholder="Название продукта..."
     formControlName="title"
-    class="w-full rounded-sm px-4 py-2 border-1 mb-2"
+    class="w-full rounded-sm px-4 py-2 border-1 mb-[10px]"
     appFocus
   >
 
   <p
-    class="text-red-600 mb-2 text-[14px]"
+    class="text-red-600 mb-2 text-[14px] mb-[10px]"
     *ngIf="titleError.errors?.minlength && titleError.touched"
   >
     Min length is 5
@@ -17,6 +17,10 @@
   <button 
     type="submit" 
     class="bg-blue-600 text-white p-2 rounded-md w-[150px]"
+    [ngClass]="{
+      'bg-gray-300': titleError.errors
+    }"
+    [disabled]="titleError.errors"
   >
     Создать
   </button>

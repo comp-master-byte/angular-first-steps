@@ -37,6 +37,10 @@ export class ProductsPage {
   ) {}
 
   ngOnInit(): void {
+    if(this.productsService.products().length) {
+      return;
+    }
+    
     this.isLoading.set(true);
     this.productsService.getAllProducts().subscribe(() => {
       this.isLoading.set(false);
