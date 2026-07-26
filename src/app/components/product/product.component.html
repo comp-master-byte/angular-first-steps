@@ -1,0 +1,25 @@
+<div class="py-4 px-6 border rounded flex items-center flex-col mb-2 mt-10">
+  <img [src]="product.image" [alt]="product.title" class="w-1/6">
+  <h2 class="mb-2 text-md text-center">{{ product.title }}</h2>
+  <p>
+    Price: <span class="font-bold">{{ product.price | currency: 'RUB' }}</span>
+  </p>
+
+  <button
+    class="rounded-md text-white py-2 px-4 my-4"
+    [ngClass]="{
+      'bg-black': !isDetailsVisible,
+      'bg-green-600': isDetailsVisible,
+    }"
+    (click)="isDetailsVisible = !isDetailsVisible"
+  >
+    {{ isDetailsVisible ? 'Hide details' : 'Show details' }}
+  </button>
+
+  <div *ngIf="isDetailsVisible">
+    <p>{{ product.description }}</p>
+    <p>
+      Rate: <span [ngStyle]="{ fontWeight: 600 }">{{ product.rating.rate }}</span>
+    </p>
+  </div>
+</div>

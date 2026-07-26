@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { GlobalError } from './components/global-error/global-error';
 import { RouterOutlet } from '@angular/router';
-
+import { Navigation } from './components/navigation/navigation';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  imports: [
+    GlobalError,
+    RouterOutlet,
+    Navigation,
+  ]
 })
 export class App {
-  protected readonly title = signal('vladilen-angular-14');
+  
 }

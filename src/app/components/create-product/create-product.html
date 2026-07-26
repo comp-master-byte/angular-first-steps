@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input 
+    type="text"
+    placeholder="Название продукта..."
+    formControlName="title"
+    class="w-full rounded-sm px-4 py-2 border-1 mb-2"
+    appFocus
+  >
+
+  <p
+    class="text-red-600 mb-2 text-[14px]"
+    *ngIf="titleError.errors?.minlength && titleError.touched"
+  >
+    Min length is 5
+  </p>
+
+  <button 
+    type="submit" 
+    class="bg-blue-600 text-white p-2 rounded-md w-[150px]"
+  >
+    Создать
+  </button>
+</form>
