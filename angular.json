@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "vladilen-angular-14": {
+    "angular-first-steps": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "vladilen-angular-14:build:production"
+              "buildTarget": "angular-first-steps:build:production"
             },
             "development": {
-              "buildTarget": "vladilen-angular-14:build:development"
+              "buildTarget": "angular-first-steps:build:development"
             }
           },
           "defaultConfiguration": "development"
